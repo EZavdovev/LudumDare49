@@ -28,6 +28,7 @@ public class DragItem : MonoBehaviour
         {
             isDragged = true;
             itemCanGive.transform.parent = playerPos;
+            itemCanGive.transform.position = playerPos.position;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
