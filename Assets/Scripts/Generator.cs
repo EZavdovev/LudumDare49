@@ -5,7 +5,9 @@ using UnityEngine;
 public class Generator : MonoBehaviour
 {
     [SerializeField]
-    private AbstractItem itemGenerator;
+    private Item itemGenerator;
+
+    private Item itemWasGenerate;
 
     [SerializeField]
     private float timeToGenerate;
@@ -38,17 +40,20 @@ public class Generator : MonoBehaviour
             return;
         }
 
-        AbstractItem item = Instantiate(itemGenerator,transform.position, Quaternion.identity);
-        item.gameObject.name = item.nameItem;
+        Item item = Instantiate(itemGenerator,transform.position, Quaternion.identity);
+        item.gameObject.name = item.NameItem;
+        itemWasGenerate = item;
         isGenerated = true;
         timer = 0;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(isGenerated == true && collision.gameObject.name == itemGenerator.nameItem)
+        if (itemWasGenerate != null && collision.gameObject.name == itemWasGenerate.name)
         {
-            isGenerated = false;
+
         }
     }
+
+
 }
