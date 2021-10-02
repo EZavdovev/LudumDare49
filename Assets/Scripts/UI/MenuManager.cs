@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,8 @@ namespace Game.UI
 
     public class MenuManager : MonoBehaviour
     {
+
+        public static event Action OnStartGameEvent = delegate { };
 
         [SerializeField]
         private GameObject _mainPanel;
@@ -60,6 +63,7 @@ namespace Game.UI
         private void StartGame()
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+            OnStartGameEvent();
         }
 
         private void ExitGame()
