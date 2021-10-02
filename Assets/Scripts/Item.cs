@@ -17,4 +17,6 @@ public class Item : MonoBehaviour
             nameItem = value;
         }
     }
+
+    public bool IsInGenerator = true;
 }

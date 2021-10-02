@@ -19,17 +19,22 @@ public class DragItem : MonoBehaviour
         if (item != null && isDragged == false)
         {
             itemCanGive = item;
-            isDragged = true;
-            item.transform.parent = playerPos;
-            OnDragged();
         }
     }
 
+    private void Update()
+    {
+        if (itemCanGive != null && Input.GetKeyDown(KeyCode.E))
+        {
+            isDragged = true;
+            itemCanGive.transform.parent = playerPos;
+        }
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         Item item;
         collision.TryGetComponent<Item>(out item);
-        if (itemCanGive == item && itemCanGive != null && isDragged == true)
+        if (itemCanGive != null && itemCanGive == item && isDragged == true)
         {
             itemCanGive = null;
             isDragged = false;

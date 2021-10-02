@@ -49,9 +49,13 @@ public class Generator : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (itemWasGenerate != null && collision.gameObject.name == itemWasGenerate.name)
+        Item item;
+        collision.TryGetComponent<Item>(out item);
+        if (itemWasGenerate != null && item != null && item.NameItem == itemWasGenerate.NameItem && item.IsInGenerator == true)
         {
-
+            itemWasGenerate.IsInGenerator = false;
+            isGenerated = false;
+            itemWasGenerate = null;
         }
     }
 
