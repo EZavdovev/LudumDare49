@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Game.Managers;
 
 namespace Game.UI
 {
@@ -19,11 +20,13 @@ namespace Game.UI
         private void OnEnable()
         {
             AbstractWareHouse.OnDieEvent += ShowLosePanel;
+            ShipManager.OnWinEvent += ShowWinPanel;
         }
 
         private void OnDisable()
         {
             AbstractWareHouse.OnDieEvent -= ShowLosePanel;
+            ShipManager.OnWinEvent -= ShowWinPanel;
         }
 
         private void ShowLosePanel()
