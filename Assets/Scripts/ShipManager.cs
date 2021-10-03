@@ -15,9 +15,15 @@ namespace Game.Managers
         [SerializeField]
         private float speedShip = 5f;
 
-        public int NegativeModifier { get; set; }
+        public static int NegativeModifier { get; set; }
 
-        public float DistanceToEarth { get; }
+        public float DistanceToEarth 
+        { 
+            get 
+            {
+                return distanceToEarth;
+            }
+        }
 
         private void Update()
         {
