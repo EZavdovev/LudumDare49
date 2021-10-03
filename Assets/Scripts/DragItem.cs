@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class DragItem : MonoBehaviour
 {
+
+    public static event Action OnTakeItem = delegate { };
+
     [SerializeField]
     private Transform playerPos;
 
