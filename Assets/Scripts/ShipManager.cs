@@ -8,6 +8,7 @@ namespace Game.Managers
     {
 
         public static event Action OnWinEvent = delegate { };
+        public static event Action OnStopEngines = delegate { };
 
         [SerializeField]
         private float distanceToEarth = 10000f;
@@ -28,6 +29,10 @@ namespace Game.Managers
         private void Update()
         {
             distanceToEarth -= (speedShip + NegativeModifier) * Time.deltaTime;
+            if(speedShip + NegativeModifier <= 0f)
+            {
+                OnStopEngines();
+            }
             if(distanceToEarth <= 0f)
             {
                 OnWinEvent();
