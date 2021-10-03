@@ -30,10 +30,16 @@ namespace Game.Audio
         private AudioMixer _mixer;
 
         [SerializeField]
-        private string _volumeParameter = "Master";
+        private string _musicParameter = "Music";
 
         [SerializeField]
-        private Slider _volumeSlider;
+        private string _soundsParameter = "Sounds";
+
+        [SerializeField]
+        private Slider _musicSlider;
+
+        [SerializeField]
+        private Slider _soundsSlider;
 
         [SerializeField]
         private List<AudioClip> _sounds = new List<AudioClip>();
@@ -45,7 +51,8 @@ namespace Game.Audio
 
         private void Awake()
         {
-            _volumeSlider.onValueChanged.AddListener(HandleSliderValueChanged);
+            _musicSlider.onValueChanged.AddListener(HandleMusicSlider);
+            _soundsSlider.onValueChanged.AddListener(HandleSoundsSlider);
         }
 
         private void OnEnable()
@@ -73,7 +80,7 @@ namespace Game.Audio
             MenuManager.OnStartGameEvent -= PlayGamePlayMusic;
             PlayerMove.OnPlayFootstepsEvent -= PlayRunningSound;
             PlayerMove.OnStopPlatingFootstepsEvent -= StopPlayingRunningSound;
-            PlayerPrefs.SetFloat(_volumeParameter, _volumeSlider.value);
+            PlayerPrefs.SetFloat(_musicParameter, _musicSlider.value);
             ShipManager.OnStopEngines -= StopPlayingEngines;
             ShipManager.OnWinEvent -= PlayWinSound;
             DragItem.OnTakeItem -= PlayPickupSound;
@@ -85,12 +92,17 @@ namespace Game.Audio
 
         private void Start()
         {
-            _volumeSlider.value = PlayerPrefs.GetFloat(_volumeParameter, _volumeSlider.value);
+            _musicSlider.value = PlayerPrefs.GetFloat(_musicParameter, _musicSlider.value);
         }
 
-        private void HandleSliderValueChanged(float value)
+        private void HandleMusicSlider(float value)
         {
-            _mixer.SetFloat(_volumeParameter, Mathf.Log10(value) * _multiplier);
+            _mixer.SetFloat(_musicParameter, Mathf.Log10(value) * _multiplier);
+        }
+
+        private void HandleSoundsSlider(float value)
+        {
+            _mixer.SetFloat(_soundsParameter, Mathf.Log10(value) * _multiplier);
         }
 
         private void PlayMenuSound()
