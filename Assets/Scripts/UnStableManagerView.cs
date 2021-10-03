@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class UnStableManagerView : MonoBehaviour
 {
     [SerializeField]
-    private Text Title;
+    private TextMeshProUGUI Title;
 
     [SerializeField]
-    private List<Text> wareHouseNames = new List<Text>();
+    private List<TextMeshProUGUI> wareHouseNames = new List<TextMeshProUGUI>();
 
     private void OnEnable()
     {
         UnStableManager.OnUnStableHappened += OpenWarningName;
+        UnStableManager.OnUnStableStarted += OpenTitle;
+        UnStableManager.OnStableWork += CloseTitle;
         AbstractWareHouse.OnNormalizeWorkEvent += CloseWarningName;
 
     }
@@ -51,6 +54,9 @@ public class UnStableManagerView : MonoBehaviour
 
     private void OnDisable()
     {
-        
+        UnStableManager.OnUnStableHappened -= OpenWarningName;
+        UnStableManager.OnUnStableStarted -= OpenTitle;
+        UnStableManager.OnStableWork -= CloseTitle;
+        AbstractWareHouse.OnNormalizeWorkEvent -= CloseWarningName;
     }
 }

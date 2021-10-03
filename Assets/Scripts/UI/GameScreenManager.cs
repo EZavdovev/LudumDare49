@@ -31,12 +31,12 @@ namespace Game.UI
 
         private void ShowLosePanel()
         {
-            _winPanel.SetActive(true);
+            _losePanel.SetActive(true);
         }
 
         private void ShowWinPanel()
         {
-            _losePanel.SetActive(true);
+            _winPanel.SetActive(true);
         }
 
         public void LoadScene(int index)

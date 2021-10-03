@@ -12,6 +12,6 @@ public class FoodWareHouseView : AbstractWareHouseView
     }
     protected override void ChangeView()
     {
-        storageContent.value = (foodWareHouse.CurrentCountResources / foodWareHouse.MaxCountResources);
+        storageContent.value = ((float)foodWareHouse.CurrentCountResources / (float)foodWareHouse.MaxCountResources);
     }
 }

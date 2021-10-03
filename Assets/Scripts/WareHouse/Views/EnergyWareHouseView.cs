@@ -12,6 +12,6 @@ public class EnergyWareHouseView : AbstractWareHouseView
     }
     protected override void ChangeView()
     {
-        storageContent.value = (energyWareHouse.CurrentCountResources / energyWareHouse.MaxCountResources);
+        storageContent.value = ((float)energyWareHouse.CurrentCountResources / (float)energyWareHouse.MaxCountResources);
     }
 }

@@ -12,6 +12,6 @@ public class FuelWareHouseView : AbstractWareHouseView
     }
     protected override void ChangeView()
     {
-        storageContent.value = (fuelWareHouse.CurrentCountResources / fuelWareHouse.MaxCountResources);
+        storageContent.value = ((float)fuelWareHouse.CurrentCountResources / (float)fuelWareHouse.MaxCountResources);
     }
 }

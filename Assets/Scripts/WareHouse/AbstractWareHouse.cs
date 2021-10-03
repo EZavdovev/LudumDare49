@@ -26,7 +26,7 @@ public abstract class AbstractWareHouse : MonoBehaviour
     {
         get
         {
-            return CurrentCountResources;
+            return currentCountResources;
         }
     }
     [SerializeField]
