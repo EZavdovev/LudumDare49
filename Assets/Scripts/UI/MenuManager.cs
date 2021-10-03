@@ -9,6 +9,8 @@ namespace Game.UI
     {
 
         public static event Action OnStartGameEvent = delegate { };
+        public static event Action OnMenuButtonPressed = delegate { };
+        public static event Action OnMenuActive = delegate { };
 
         [SerializeField]
         private GameObject _mainPanel;
@@ -33,10 +35,15 @@ namespace Game.UI
 
         private void OnEnable()
         {
+            OnMenuActive();
             _startButton.onClick.AddListener(StartGame);
             _exitButton.onClick.AddListener(ExitGame);
             _optionsButton.onClick.AddListener(OpenOptions);
             _creditsButton.onClick.AddListener(OpenCredits);
+            _startButton.onClick.AddListener(PlaySound);
+            _exitButton.onClick.AddListener(PlaySound);
+            _optionsButton.onClick.AddListener(PlaySound);
+            _creditsButton.onClick.AddListener(PlaySound);
         }
 
         private void OpenOptions()
@@ -58,6 +65,7 @@ namespace Game.UI
             _optionsPanel.SetActive(false);
             _creditsPanel.SetActive(false);
             _mainPanel.SetActive(true);
+            PlaySound();
         }
 
         private void StartGame()
@@ -69,6 +77,11 @@ namespace Game.UI
         private void ExitGame()
         {
             Application.Quit();
+        }
+
+        private void PlaySound()
+        {
+            OnMenuButtonPressed();
         }
     }
 }
