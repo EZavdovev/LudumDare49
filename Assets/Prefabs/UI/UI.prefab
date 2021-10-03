@@ -1947,6 +1947,7 @@ GameObject:
   - component: {fileID: 7477124247256113246}
   - component: {fileID: 7477124247256113245}
   - component: {fileID: 7241410808247182848}
+  - component: {fileID: 7477124246778672827}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -2050,6 +2051,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _menuScreen: {fileID: 7477124248495637806}
   _gameScreen: {fileID: 7477124246845668679}
+--- !u!114 &7477124246778672827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7477124247256113244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c99070abd7f3abf42a93e8312b8c0218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _musicSource: {fileID: 0}
+  _soundsSource: {fileID: 0}
+  _mixer: {fileID: 24100000, guid: 79897255e7af27a4397dcf7c27ca296b, type: 2}
+  _volumeParameter: Master
+  _volumeSlider: {fileID: 7477124247157545826}
 --- !u!1 &7477124247384898770
 GameObject:
   m_ObjectHideFlags: 0
