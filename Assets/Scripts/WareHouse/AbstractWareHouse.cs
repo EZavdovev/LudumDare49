@@ -12,8 +12,23 @@ public abstract class AbstractWareHouse : MonoBehaviour
     protected string nameResource;
     [SerializeField]
     protected int maxCountResources = 100;
+    public int MaxCountResources
+    {
+        get
+        {
+            return maxCountResources;
+        }
+    }
+
     [SerializeField]
     protected int currentCountResources = 50;
+    public int CurrentCountResources
+    {
+        get
+        {
+            return CurrentCountResources;
+        }
+    }
     [SerializeField]
     protected float timeToSpent = 5;
     [SerializeField]
