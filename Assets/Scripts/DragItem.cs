@@ -35,7 +35,7 @@ public class DragItem : MonoBehaviour
     {
         Item item;
         collision.TryGetComponent<Item>(out item);
-        if (itemCanGive != null && itemCanGive == item && isDragged == true)
+        if (itemCanGive != null && itemCanGive == item)
         {
             itemCanGive = null;
             isDragged = false;
