@@ -1,9 +1,13 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+
+    public static event Action OnPlayFootstepsEvent = delegate { };
+    public static event Action OnStopPlatingFootstepsEvent = delegate { };
+
     [SerializeField]
     private Transform playerPos;
     [SerializeField]
@@ -30,26 +34,31 @@ public class PlayerMove : MonoBehaviour
         if (xMove == 0 && yMove == 0 && animator.runtimeAnimatorController != animations[3])
         {
             animator.runtimeAnimatorController = animations[3];
+            OnStopPlatingFootstepsEvent();
         }
 
         if (xMove > 0 && animator.runtimeAnimatorController != animations[1])
         {
             animator.runtimeAnimatorController = animations[1];
+            OnPlayFootstepsEvent();
         }
 
         if (xMove < 0 && animator.runtimeAnimatorController != animations[1])
         {
             animator.runtimeAnimatorController = animations[1];
+            OnPlayFootstepsEvent();
         }
 
         if (xMove == 0 && yMove > 0 && animator.runtimeAnimatorController != animations[2])
         {
             animator.runtimeAnimatorController = animations[2];
+            OnPlayFootstepsEvent();
         }
 
         if (xMove == 0 && yMove < 0 && animator.runtimeAnimatorController != animations[0])
         {
             animator.runtimeAnimatorController = animations[0];
+            OnPlayFootstepsEvent();
         }
     }
 
