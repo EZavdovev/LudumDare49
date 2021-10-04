@@ -524,5 +524,27 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7477124248148002723, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: m_text
+      value: 'Programmers:
+
+        Valery Markelov
+
+        Evgeny Zavdovyev
+
+
+        Level
+        designer:
+
+        Gleb Alekseev
+
+
+        Art designer & sound designer:
+
+        Mikhail
+        Dobrilko
+
+'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73c360b693ed37744b67413971da1c83, type: 3}
