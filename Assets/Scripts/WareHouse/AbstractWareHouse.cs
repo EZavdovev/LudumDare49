@@ -105,8 +105,8 @@ public abstract class AbstractWareHouse : MonoBehaviour
         if(currentCountResources > maxCountResources)
         {
             currentCountResources = maxCountResources;
-            OnMoreResourceEvent();
         }
+        OnMoreResourceEvent();
     }
 
     protected virtual void DangerHappened(string name)

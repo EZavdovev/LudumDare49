@@ -392,6 +392,14 @@ PrefabInstance:
       propertyPath: _musicSlider
       value: 
       objectReference: {fileID: 997227803}
+    - target: {fileID: 7477124246778672827, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: _sounds.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7477124246778672827, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: _sounds.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1940bb1b295f5de409640dacae932c94, type: 3}
     - target: {fileID: 7477124247003129575, guid: 73c360b693ed37744b67413971da1c83, type: 3}
       propertyPath: m_IsActive
       value: 1

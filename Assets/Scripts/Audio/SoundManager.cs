@@ -68,6 +68,7 @@ namespace Game.Audio
             DragItem.OnTakeItem += PlayPickupSound;
             AbstractWareHouse.OnMoreResourceEvent += PlayUpResourceSound;
             AbstractWareHouse.OnDieEvent += PlayLoseSound;
+            AbstractWareHouse.OnNormalizeWorkEvent += PlayRepairSound;
             UnStableManager.OnUnStableStarted += PlaySiren;
             UnStableManager.OnStableWork += StopSiren;
             GameScreenManager.OnStopGame += StopSounds;
@@ -87,6 +88,7 @@ namespace Game.Audio
             DragItem.OnTakeItem -= PlayPickupSound;
             AbstractWareHouse.OnMoreResourceEvent -= PlayUpResourceSound;
             AbstractWareHouse.OnDieEvent -= PlayLoseSound;
+            AbstractWareHouse.OnNormalizeWorkEvent -= PlayRepairSound;
             UnStableManager.OnUnStableStarted -= PlaySiren;
             UnStableManager.OnStableWork -= StopSiren;
             GameScreenManager.OnStopGame -= StopSounds;
@@ -189,6 +191,11 @@ namespace Game.Audio
             StopSiren();
             StopPlayingRunningSound();
             _engineSource.Stop();
+        }
+
+        private void PlayRepairSound(string nameWareHouse)
+        {
+            _soundsSource.PlayOneShot(_sounds[8]);
         }
     }
 }
