@@ -10,6 +10,7 @@ namespace Game.Managers
 
         public static event Action OnWinEvent = delegate { };
         public static event Action OnStopEngines = delegate { };
+        public static event Action OnStartEngines = delegate { };
 
         [SerializeField]
         private float distanceToEarth = 4000f;
@@ -20,6 +21,8 @@ namespace Game.Managers
         public static int NegativeModifier { get; set; }
 
         private bool isPaused = false;
+
+        private bool isEngineOut = false;
         public float DistanceToEarth 
         { 
             get 
@@ -35,10 +38,18 @@ namespace Game.Managers
                 return;
             }
             distanceToEarth -= (speedShip + NegativeModifier) * Time.deltaTime;
-            if(speedShip + NegativeModifier <= 0f)
+            if(speedShip + NegativeModifier <= 0f && isEngineOut == false)
             {
+                isEngineOut = true;
                 OnStopEngines();
             }
+
+            if(speedShip + NegativeModifier > 0f && isEngineOut == true)
+            {
+                isEngineOut = false;
+                OnStartEngines();
+            }
+
             if(distanceToEarth <= 0f)
             {
                 OnWinEvent();

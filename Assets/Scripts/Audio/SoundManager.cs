@@ -78,6 +78,7 @@ namespace Game.Audio
             UnStableManager.OnUnStableStarted += PlaySiren;
             UnStableManager.OnStableWork += StopSiren;
             GameScreenManager.OnStopGame += StopSounds;
+            ShipManager.OnStartEngines += StartPlayingEngines;
         }
 
         private void OnDisable()
@@ -98,6 +99,7 @@ namespace Game.Audio
             UnStableManager.OnUnStableStarted -= PlaySiren;
             UnStableManager.OnStableWork -= StopSiren;
             GameScreenManager.OnStopGame -= StopSounds;
+            ShipManager.OnStartEngines -= StartPlayingEngines;
         }
 
         private void Start()
@@ -203,5 +205,6 @@ namespace Game.Audio
         {
             _soundsSource.PlayOneShot(_sounds[8]);
         }
+
     }
 }

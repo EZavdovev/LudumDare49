@@ -5467,10 +5467,10 @@ MonoBehaviour:
   maxCountResources: 100
   currentCountResources: 100
   timeToSpent: 8
-  countLessResources: 1
-  negativeModifier: 4
+  countLessResources: 2
+  negativeModifier: 5
   PlayerPos: {fileID: 660013910}
-  distPlayerToWareHouseNeed: 2
+  distPlayerToWareHouseNeed: 3
 --- !u!50 &143895737
 Rigidbody2D:
   serializedVersion: 4
@@ -12516,6 +12516,81 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &378144719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 378144720}
+  - component: {fileID: 378144722}
+  - component: {fileID: 378144721}
+  m_Layer: 5
+  m_Name: LoseEnergy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &378144720
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378144719}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1028716637}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000061035, y: 0}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &378144721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378144719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.80784315}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &378144722
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378144719}
+  m_CullTransparentMesh: 1
 --- !u!1 &380123546
 GameObject:
   m_ObjectHideFlags: 0
@@ -22723,7 +22798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPos: {fileID: 660013910}
   playerSee: {fileID: 660013909}
-  speed: 7
+  speed: 8.5
   animator: {fileID: 660013907}
   animations:
   - {fileID: 9100000, guid: e1c1b77c71030894e837e9ba2c627fae, type: 2}
@@ -26529,7 +26604,7 @@ GameObject:
   - component: {fileID: 796594171}
   - component: {fileID: 796594170}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Danger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34542,15 +34617,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8264419260862324427, guid: c39bbd2028bce044bb3a076652580302, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.85104376
       objectReference: {fileID: 0}
     - target: {fileID: 8264419260862324427, guid: c39bbd2028bce044bb3a076652580302, type: 3}
       propertyPath: m_Color.g
-      value: 0.65882355
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8264419260862324427, guid: c39bbd2028bce044bb3a076652580302, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 0.37169808
       objectReference: {fileID: 0}
     - target: {fileID: 8264419261091812625, guid: c39bbd2028bce044bb3a076652580302, type: 3}
       propertyPath: m_Pivot.x
@@ -35881,6 +35956,7 @@ GameObject:
   - component: {fileID: 1028716635}
   - component: {fileID: 1028716634}
   - component: {fileID: 1028716633}
+  - component: {fileID: 1028716638}
   m_Layer: 5
   m_Name: AttentionCanvas
   m_TagString: Untagged
@@ -35978,6 +36054,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 796594172}
+  - {fileID: 378144720}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -35986,6 +36063,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1028716638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028716632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f414d21b878d9b64bab43e852ea8c015, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _light: {fileID: 378144719}
 --- !u!1 &1033244264
 GameObject:
   m_ObjectHideFlags: 0
@@ -54653,11 +54743,11 @@ MonoBehaviour:
   nameResource: Fuel
   maxCountResources: 100
   currentCountResources: 100
-  timeToSpent: 8
-  countLessResources: 1
-  negativeModifier: 4
+  timeToSpent: 24
+  countLessResources: 3
+  negativeModifier: 15
   PlayerPos: {fileID: 660013910}
-  distPlayerToWareHouseNeed: 2
+  distPlayerToWareHouseNeed: 3
 --- !u!50 &1677750414
 Rigidbody2D:
   serializedVersion: 4
@@ -55351,10 +55441,10 @@ MonoBehaviour:
   maxCountResources: 100
   currentCountResources: 100
   timeToSpent: 8
-  countLessResources: 1
-  negativeModifier: 4
+  countLessResources: 2
+  negativeModifier: 5
   PlayerPos: {fileID: 660013910}
-  distPlayerToWareHouseNeed: 2
+  distPlayerToWareHouseNeed: 3
 --- !u!50 &1690202895
 Rigidbody2D:
   serializedVersion: 4
@@ -57016,9 +57106,9 @@ MonoBehaviour:
   currentCountResources: 100
   timeToSpent: 8
   countLessResources: 1
-  negativeModifier: 4
+  negativeModifier: 5
   PlayerPos: {fileID: 660013910}
-  distPlayerToWareHouseNeed: 2
+  distPlayerToWareHouseNeed: 3
 --- !u!1 &1749338464
 GameObject:
   m_ObjectHideFlags: 0
@@ -63341,8 +63431,8 @@ MonoBehaviour:
   - Water
   - Energy
   - Fuel
-  minTimerToGenerate: 20
-  maxTimerToGenerate: 30
+  minTimerToGenerate: 13
+  maxTimerToGenerate: 35
 --- !u!4 &1924956610
 Transform:
   m_ObjectHideFlags: 0
@@ -63369,8 +63459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a89bd6da5dba5b4a86307395b59a36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceToEarth: 10000
-  speedShip: 50
+  distanceToEarth: 6000
+  speedShip: 13
 --- !u!1 &1929684688
 GameObject:
   m_ObjectHideFlags: 0

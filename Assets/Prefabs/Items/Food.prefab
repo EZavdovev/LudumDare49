@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f7fd8586cad04c42a5af96bcaa1434c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countItemScore: 5
+  countItemScore: 7
   nameItem: Food
   IsInGenerator: 1
 --- !u!61 &4141207325716903924
