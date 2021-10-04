@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Game.UI;
 
 namespace Game.Managers
 {
@@ -11,13 +12,14 @@ namespace Game.Managers
         public static event Action OnStopEngines = delegate { };
 
         [SerializeField]
-        private float distanceToEarth = 10000f;
+        private float distanceToEarth = 4000f;
 
         [SerializeField]
         private float speedShip = 5f;
 
         public static int NegativeModifier { get; set; }
 
+        private bool isPaused = false;
         public float DistanceToEarth 
         { 
             get 
@@ -28,6 +30,10 @@ namespace Game.Managers
 
         private void Update()
         {
+            if (isPaused)
+            {
+                return;
+            }
             distanceToEarth -= (speedShip + NegativeModifier) * Time.deltaTime;
             if(speedShip + NegativeModifier <= 0f)
             {
@@ -37,6 +43,22 @@ namespace Game.Managers
             {
                 OnWinEvent();
             }
+        }
+
+        private void OnEnable()
+        {
+            NegativeModifier = 0;
+            GameScreenManager.OnStopGame += PauseManager;
+        }
+
+        private void OnDisable()
+        {
+            GameScreenManager.OnStopGame -= PauseManager;
+        }
+
+        private void PauseManager()
+        {
+            isPaused = true;
         }
     }
 }

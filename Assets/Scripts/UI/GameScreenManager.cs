@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Game.Managers;
+using System;
 
 namespace Game.UI
 {
 
     public class GameScreenManager : MonoBehaviour
     {
-
+        public static event Action OnStopGame = delegate { };
         [SerializeField]
         private GameObject _losePanel;
 
@@ -31,16 +32,20 @@ namespace Game.UI
 
         private void ShowLosePanel()
         {
-            _winPanel.SetActive(true);
+            _losePanel.SetActive(true);
+            OnStopGame();
         }
 
         private void ShowWinPanel()
         {
-            _losePanel.SetActive(true);
+            _winPanel.SetActive(true);
+            OnStopGame();
         }
 
         public void LoadScene(int index)
         {
+            _losePanel.SetActive(false);
+            _winPanel.SetActive(false);
             UnityEngine.SceneManagement.SceneManager.LoadScene(index);
         }
     }

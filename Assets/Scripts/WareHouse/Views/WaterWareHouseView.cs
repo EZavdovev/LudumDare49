@@ -12,6 +12,6 @@ public class WaterWareHouseView : AbstractWareHouseView
     }
     protected override void ChangeView()
     {
-        storageContent.value = (waterWareHouse.CurrentCountResources / waterWareHouse.MaxCountResources);
+        storageContent.value = ((float)waterWareHouse.CurrentCountResources / (float)waterWareHouse.MaxCountResources);
     }
 }
