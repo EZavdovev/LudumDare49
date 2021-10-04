@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &749620594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7241410808247182848, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+  m_PrefabInstance: {fileID: 7477124246778672824}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b47846862047ee146bdd5b58fe21e654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &997227803 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7477124247157545826, guid: 73c360b693ed37744b67413971da1c83, type: 3}
@@ -370,6 +381,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6899945703136946992, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: m_text
+      value: Space Survival Simulator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6899945703136946992, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: m_fontSize
+      value: 91.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 6899945703136946992, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 91.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 6899945703136946992, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: 97690656
+      objectReference: {fileID: 0}
     - target: {fileID: 7314566847365177659, guid: 73c360b693ed37744b67413971da1c83, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -567,6 +594,42 @@ PrefabInstance:
         Dobrilko
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108037535427002360, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8108037535427002360, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 435
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089023628393054091, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089023628393054091, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089023628393054091, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 749620594}
+    - target: {fileID: 9089023628393054091, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089023628393054091, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: MenuOpened
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089023628393054091, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Game.UI.UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9089023628393054091, guid: 73c360b693ed37744b67413971da1c83, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73c360b693ed37744b67413971da1c83, type: 3}

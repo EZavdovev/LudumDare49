@@ -12,10 +12,18 @@ namespace Game.UI
         [SerializeField]
         private GameObject _gameScreen;
 
+        private static UIManager Instance;
+
         private void Awake()
         {
+            if(Instance != null)
+            {
+                Destroy(gameObject);
+                return;
+            }
             DontDestroyOnLoad(this);
             MenuManager.OnStartGameEvent += GameStarted;
+            Instance = this;
         }
 
         private void OnDisable()
