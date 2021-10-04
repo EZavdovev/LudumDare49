@@ -5465,10 +5465,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameResource: Energy
   maxCountResources: 100
-  currentCountResources: 50
-  timeToSpent: 5
+  currentCountResources: 100
+  timeToSpent: 8
   countLessResources: 1
-  negativeModifier: 2
+  negativeModifier: 4
   PlayerPos: {fileID: 660013910}
   distPlayerToWareHouseNeed: 2
 --- !u!50 &143895737
@@ -16911,7 +16911,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492433612}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 7.98, y: 6.64, z: -10.2}
+  m_LocalPosition: {x: 7.98, y: 4.83, z: -10.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1707947315}
@@ -22724,7 +22724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPos: {fileID: 660013910}
   playerSee: {fileID: 660013909}
-  speed: 5
+  speed: 7
   animator: {fileID: 660013907}
   animations:
   - {fileID: 9100000, guid: e1c1b77c71030894e837e9ba2c627fae, type: 2}
@@ -54465,10 +54465,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameResource: Fuel
   maxCountResources: 100
-  currentCountResources: 50
-  timeToSpent: 5
+  currentCountResources: 100
+  timeToSpent: 8
   countLessResources: 1
-  negativeModifier: 2
+  negativeModifier: 4
   PlayerPos: {fileID: 660013910}
   distPlayerToWareHouseNeed: 2
 --- !u!50 &1677750414
@@ -55162,10 +55162,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameResource: Food
   maxCountResources: 100
-  currentCountResources: 50
-  timeToSpent: 5
+  currentCountResources: 100
+  timeToSpent: 8
   countLessResources: 1
-  negativeModifier: 2
+  negativeModifier: 4
   PlayerPos: {fileID: 660013910}
   distPlayerToWareHouseNeed: 2
 --- !u!50 &1690202895
@@ -56826,10 +56826,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameResource: Water
   maxCountResources: 100
-  currentCountResources: 50
-  timeToSpent: 5
+  currentCountResources: 100
+  timeToSpent: 8
   countLessResources: 1
-  negativeModifier: 2
+  negativeModifier: 4
   PlayerPos: {fileID: 660013910}
   distPlayerToWareHouseNeed: 2
 --- !u!1 &1749338464
@@ -63183,7 +63183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToEarth: 10000
-  speedShip: 5
+  speedShip: 50
 --- !u!1 &1929684688
 GameObject:
   m_ObjectHideFlags: 0

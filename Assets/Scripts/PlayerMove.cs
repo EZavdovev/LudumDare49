@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Game.UI;
 public class PlayerMove : MonoBehaviour
 {
 
@@ -21,8 +21,13 @@ public class PlayerMove : MonoBehaviour
 
     private bool isRight = false;
 
+    private bool isPaused = false;
     private void FixedUpdate()
     {
+        if (isPaused)
+        {
+            return;
+        }
         Move();
     }
     private void Move()
@@ -75,6 +80,20 @@ public class PlayerMove : MonoBehaviour
             isRight = false;
             playerSee.flipX = false;
         }
+    }
 
+    private void OnEnable()
+    {
+        GameScreenManager.OnStopGame += PauseMove;
+    }
+
+    private void OnDisable()
+    {
+        GameScreenManager.OnStopGame -= PauseMove;
+    }
+
+    private void PauseMove()
+    {
+        isPaused = true;
     }
 }

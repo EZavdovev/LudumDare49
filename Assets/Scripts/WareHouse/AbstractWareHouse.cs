@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Game.Managers;
+using Game.UI;
 public abstract class AbstractWareHouse : MonoBehaviour
 {
     public static event Action OnDieEvent = delegate { };
@@ -45,6 +46,8 @@ public abstract class AbstractWareHouse : MonoBehaviour
     protected float timer;
     protected bool isNeedRepair = false;
 
+    protected bool isPaused = false;
+
     protected virtual void Awake()
     {
         timer = 0;
@@ -53,15 +56,21 @@ public abstract class AbstractWareHouse : MonoBehaviour
     protected virtual void OnEnable()
     {
         UnStableManager.OnUnStableHappened += DangerHappened;
+        GameScreenManager.OnStopGame += PauseHouses;
     }
 
     protected virtual void OnDisable()
     {
         UnStableManager.OnUnStableHappened -= DangerHappened;
+        GameScreenManager.OnStopGame -= PauseHouses;
     }
 
     protected virtual void Update()
     {
+        if (isPaused)
+        {
+            return;
+        }
         DangerNormalized();
         LessResource();
     }
@@ -125,5 +134,10 @@ public abstract class AbstractWareHouse : MonoBehaviour
             ShipManager.NegativeModifier += negativeModifier;
             OnNormalizeWorkEvent(nameResource);
         }
+    }
+
+    protected virtual void PauseHouses()
+    {
+        isPaused = true;
     }
 }

@@ -1,4 +1,4 @@
-using System.Collections;
+using Game.UI;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +26,8 @@ public class UnStableManager : MonoBehaviour
 
     private float timer;
 
+    private bool isPaused = false;
+
     private void Awake()
     {
         timer = 0;
@@ -40,15 +42,21 @@ public class UnStableManager : MonoBehaviour
     private void OnEnable()
     {
         EnergyWareHouse.OnNormalizeWorkEvent += StableWareHouse;
+        GameScreenManager.OnStopGame += PauseManager;
     }
 
     private void OnDisable()
     {
         EnergyWareHouse.OnNormalizeWorkEvent -= StableWareHouse;
+        GameScreenManager.OnStopGame -= PauseManager;
     }
 
     private void Update()
     {
+        if (isPaused)
+        {
+            return;
+        }
         UnStableGenerate();
     }
 
@@ -89,6 +97,12 @@ public class UnStableManager : MonoBehaviour
                 }
             }
         }
+    }
+
+
+    private void PauseManager()
+    {
+        isPaused = true;
     }
 
 }

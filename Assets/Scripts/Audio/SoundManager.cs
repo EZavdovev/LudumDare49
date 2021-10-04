@@ -70,6 +70,7 @@ namespace Game.Audio
             AbstractWareHouse.OnDieEvent += PlayLoseSound;
             UnStableManager.OnUnStableStarted += PlaySiren;
             UnStableManager.OnStableWork += StopSiren;
+            GameScreenManager.OnStopGame += StopSounds;
         }
 
         private void OnDisable()
@@ -88,6 +89,7 @@ namespace Game.Audio
             AbstractWareHouse.OnDieEvent -= PlayLoseSound;
             UnStableManager.OnUnStableStarted -= PlaySiren;
             UnStableManager.OnStableWork -= StopSiren;
+            GameScreenManager.OnStopGame -= StopSounds;
         }
 
         private void Start()
@@ -180,6 +182,13 @@ namespace Game.Audio
         private void PlayLoseSound()
         {
             _soundsSource.PlayOneShot(_sounds[7]);
+        }
+
+        private void StopSounds()
+        {
+            StopSiren();
+            StopPlayingRunningSound();
+            _engineSource.Stop();
         }
     }
 }

@@ -29,6 +29,10 @@ public class DragItem : MonoBehaviour
     {
         if (itemCanGive != null && Input.GetKeyDown(KeyCode.E))
         {
+            if(isDragged == false)
+            {
+                OnTakeItem();
+            }
             isDragged = true;
             itemCanGive.transform.parent = playerPos;
             itemCanGive.transform.position = playerPos.position;
