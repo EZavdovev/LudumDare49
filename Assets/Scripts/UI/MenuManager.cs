@@ -22,6 +22,9 @@ namespace Game.UI
         private GameObject _optionsPanel;
 
         [SerializeField]
+        private GameObject _tutorialPanel;
+
+        [SerializeField]
         private Button _creditsButton;
 
         [SerializeField]
@@ -32,6 +35,9 @@ namespace Game.UI
 
         [SerializeField]
         private Button _exitButton;
+
+        [SerializeField]
+        private Button _tutorialButton;
 
         private void OnEnable()
         {
@@ -44,12 +50,23 @@ namespace Game.UI
             _exitButton.onClick.AddListener(PlaySound);
             _optionsButton.onClick.AddListener(PlaySound);
             _creditsButton.onClick.AddListener(PlaySound);
+            _tutorialButton.onClick.AddListener(PlaySound);
+            _tutorialButton.onClick.AddListener(Tutorial);
+        }
+
+        private void Tutorial()
+        {
+            _mainPanel.SetActive(false);
+            _creditsPanel.SetActive(false);
+            _optionsPanel.SetActive(false);
+            _tutorialPanel.SetActive(true);
         }
 
         private void OpenOptions()
         {
             _mainPanel.SetActive(false);
             _creditsPanel.SetActive(false);
+            _tutorialPanel.SetActive(false);
             _optionsPanel.SetActive(true);
         }
 
@@ -57,6 +74,7 @@ namespace Game.UI
         {
             _mainPanel.SetActive(false);
             _optionsPanel.SetActive(false);
+            _tutorialPanel.SetActive(false);
             _creditsPanel.SetActive(true);
         }
 
@@ -64,6 +82,7 @@ namespace Game.UI
         {
             _optionsPanel.SetActive(false);
             _creditsPanel.SetActive(false);
+            _tutorialPanel.SetActive(false);
             _mainPanel.SetActive(true);
             PlaySound();
         }
