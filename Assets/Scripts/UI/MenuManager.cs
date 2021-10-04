@@ -85,6 +85,7 @@ namespace Game.UI
             _tutorialPanel.SetActive(false);
             _mainPanel.SetActive(true);
             PlaySound();
+            _tutorialPanel.GetComponent<TutorialPanel>()._currentSlide = 0;
         }
 
         private void StartGame()
