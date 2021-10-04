@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Game.UI;
+using Game.Audio;
+
 public class PlayerMove : MonoBehaviour
 {
 
@@ -22,6 +24,12 @@ public class PlayerMove : MonoBehaviour
     private bool isRight = false;
 
     private bool isPaused = false;
+
+    private void Awake()
+    {
+        SoundManager.instance.StartPlayingEngines();
+    }
+
     private void FixedUpdate()
     {
         if (isPaused)

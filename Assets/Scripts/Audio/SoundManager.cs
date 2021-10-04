@@ -11,6 +11,8 @@ namespace Game.Audio
     public class SoundManager : MonoBehaviour
     {
 
+        public static SoundManager instance;
+
         [SerializeField]
         private AudioSource _musicSource;
 
@@ -51,6 +53,10 @@ namespace Game.Audio
 
         private void Awake()
         {
+            if(instance == null)
+            {
+                instance = this;
+            }
             _musicSlider.onValueChanged.AddListener(HandleMusicSlider);
             _soundsSlider.onValueChanged.AddListener(HandleSoundsSlider);
         }
@@ -140,7 +146,7 @@ namespace Game.Audio
             _footStepsSource.Stop();
         }
 
-        private void StartPlayingEngines()
+        public void StartPlayingEngines() // asdsd
         {
             _engineSource.Play();
             _engineSource.loop = true;
@@ -178,12 +184,12 @@ namespace Game.Audio
 
         private void PlayWinSound()
         {
-            _soundsSource.PlayOneShot(_sounds[6]);
+            _soundsSource.PlayOneShot(_sounds[7]);
         }
 
         private void PlayLoseSound()
         {
-            _soundsSource.PlayOneShot(_sounds[7]);
+            _soundsSource.PlayOneShot(_sounds[6]);
         }
 
         private void StopSounds()
