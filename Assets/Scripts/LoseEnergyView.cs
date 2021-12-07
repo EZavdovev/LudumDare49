@@ -15,7 +15,8 @@ public class LoseEnergyView : MonoBehaviour
 
     private void OnDisable()
     {
-        
+        AbstractWareHouse.OnNormalizeWorkEvent -= OnLight;
+        UnStableManager.OnUnStableHappened -= OffLight;
     }
 
     private void OffLight(string name)

@@ -25,6 +25,9 @@ namespace Game.UI
         private GameObject _tutorialPanel;
 
         [SerializeField]
+        private GameObject _leaderBoardPanel;
+
+        [SerializeField]
         private Button _creditsButton;
 
         [SerializeField]
@@ -39,6 +42,9 @@ namespace Game.UI
         [SerializeField]
         private Button _tutorialButton;
 
+        [SerializeField]
+        private Button _leaderBoardButton;
+
         private void OnEnable()
         {
             OnMenuActive();
@@ -52,10 +58,13 @@ namespace Game.UI
             _creditsButton.onClick.AddListener(PlaySound);
             _tutorialButton.onClick.AddListener(PlaySound);
             _tutorialButton.onClick.AddListener(Tutorial);
+            _leaderBoardButton.onClick.AddListener(PlaySound);
+            _leaderBoardButton.onClick.AddListener(LeaderBoard);
         }
 
         private void Tutorial()
         {
+            _leaderBoardPanel.SetActive(false);
             _mainPanel.SetActive(false);
             _creditsPanel.SetActive(false);
             _optionsPanel.SetActive(false);
@@ -64,6 +73,7 @@ namespace Game.UI
 
         private void OpenOptions()
         {
+            _leaderBoardPanel.SetActive(false);
             _mainPanel.SetActive(false);
             _creditsPanel.SetActive(false);
             _tutorialPanel.SetActive(false);
@@ -72,6 +82,7 @@ namespace Game.UI
 
         private void OpenCredits()
         {
+            _leaderBoardPanel.SetActive(false);
             _mainPanel.SetActive(false);
             _optionsPanel.SetActive(false);
             _tutorialPanel.SetActive(false);
@@ -80,6 +91,7 @@ namespace Game.UI
 
         public void OpenMainPanel()
         {
+            _leaderBoardPanel.SetActive(false);
             _optionsPanel.SetActive(false);
             _creditsPanel.SetActive(false);
             _tutorialPanel.SetActive(false);
@@ -88,6 +100,14 @@ namespace Game.UI
             _tutorialPanel.GetComponent<TutorialPanel>()._currentSlide = 0;
         }
 
+        public void LeaderBoard()
+        {
+            _leaderBoardPanel.SetActive(true);
+            _optionsPanel.SetActive(false);
+            _creditsPanel.SetActive(false);
+            _tutorialPanel.SetActive(false);
+            _mainPanel.SetActive(false);
+        }
         private void StartGame()
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(1);
